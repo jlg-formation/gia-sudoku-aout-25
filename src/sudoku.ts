@@ -102,14 +102,13 @@ export function fmt(grid: Grid): string {
   const lines: string[] = [];
   for (let r = 0; r < N; r++) {
     if (r % 3 === 0) lines.push('+-------+-------+-------+');
-    const row = [];
+    let row = '';
     for (let c = 0; c < N; c++) {
-      if (c % 3 === 0) row.push('|');
-      row.push(grid[r][c] === 0 ? '.' : String(grid[r][c]));
-      row.push(' ');
+      if (c % 3 === 0) row += '| ';
+      row += (grid[r][c] === 0 ? '.' : String(grid[r][c])) + ' ';
     }
-    row.push('|');
-    lines.push(row.join('').replace(/ $/, ''));
+    row += '|';
+    lines.push(row.trimEnd());
   }
   lines.push('+-------+-------+-------+');
   return lines.join('\n');
