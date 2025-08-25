@@ -1,0 +1,27 @@
+{
+  "name": "sudoku-gen-cli",
+  "version": "1.0.0",
+  "description": "CLI Node/TypeScript to generate 9x9 Sudoku puzzles (unique solution) with optional seed.",
+  "type": "commonjs",
+  "bin": {
+    "sudoku-gen": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --format=cjs --outfile=dist/cli.js",
+    "dev": "tsc --watch",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/cli.js"
+  },
+  "keywords": [
+    "sudoku",
+    "cli",
+    "typescript",
+    "generator"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.23.0",
+    "typescript": "^5.5.4"
+  }
+}
